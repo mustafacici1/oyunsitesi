@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epic Game Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Side Navigation -->
+        <aside class="side-nav">
+            <div class="logo">
+                <span class="logo-icon">🎮</span>
+                <h1>Game Hub</h1>
+            </div>
+            <button class="mobile-menu-toggle">☰</button>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active" data-category="all">
+                        <i class="nav-icon">🌐</i>
+                        <span>All Games</span>
+                    </li>
+                    <li data-category="action">
+                        <i class="nav-icon">💥</i>
+                        <span>Action</span>
+                    </li>
+                    <li data-category="puzzle">
+                        <i class="nav-icon">🧩</i>
+                        <span>Puzzle</span>
+                    </li>
+                    <li data-category="racing">
+                        <i class="nav-icon">🏎️</i>
+                        <span>Racing</span>
+                    </li>
+                    <li data-category="adventure">
+                        <i class="nav-icon">🌄</i>
+                        <span>Adventure</span>
+                    </li>
+                </ul>
+            </nav>
+            <div class="side-nav-footer">
+                <button class="theme-toggle">
+                    <span class="theme-icon">🌙</span>
+                    Dark Mode
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search games...">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </header>
+            <section class="game-grid">
+               
+
+                <div class="game-card" data-game="snake" data-category="puzzle">
+                    <div class="game-card-inner">
+                        <div class="game-card-front">
+                            <img src="snakee.png" alt="Snake Game">
+                        </div>
+                        <div class="game-card-back">
+                            <h3>Snake</h3>
+                            <p>Classic arcade snake game</p>
+                            <div class="game-stats">
+                                <span>⭐ 4.2</span>
+                                <span>🧩 Puzzle</span>
+                            </div>
+                            <a href="snake.html" target="_blank">
+                                <button class="play-btn">Play Now</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-game="racing-challenge" data-category="racing">
+                    <div class="game-card-inner">
+                        <div class="game-card-front">
+                            <img src="pinpon.png" alt="Racing Challenge">
+                        </div>
+                        <div class="game-card-back">
+                            <h3>Racing Challenge</h3>
+                            <p>High-speed racing excitement</p>
+                            <div class="game-stats">
+                                <span>⭐ 4.6</span>
+                                <span>🏎️ Racing</span>
+                            </div>
+                            <a href="pinpon.html" target="_blank">
+                                <button class="play-btn">Play Now</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-card" data-game="adventure-world" data-category="adventure">
+                    <div class="game-card-inner">
+                        <div class="game-card-front">
+                            <img src="matematik.png" alt="Adventure World">
+                        </div>
+                        <div class="game-card-back">
+                            <h3>Matematik Düellosu</h3>
+                            <p>Explore mysterious landscapes</p>
+                            <div class="game-stats">
+                                <span>⭐ 4.8</span>
+                                <span>🌄 Adventure</span>
+                            </div>
+                            <a href="mathgame.html" target="_blank">
+                                <button class="play-btn">Play Now</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- script.js yine kullanılabilir ama artık modal yok -->
+    <script src="script.js"></script>
+</body>
+</html>

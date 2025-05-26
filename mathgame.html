@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matematik Düellosu Pro</title>
+  <link rel="stylesheet" href="mathgamestyle.css">
+</head>
+<body>
+  <div id="menu-screen" class="screen active">
+    <h1>🧠 Matematik Düellosu Pro 🎮</h1>
+    <div class="stats-display">
+      <div class="stat-item">
+        <span class="stat-label">En Yüksek Seviye:</span>
+        <span id="highest-level">1</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Toplam Puan:</span>
+        <span id="total-score">0</span>
+      </div>
+    </div>
+    <div class="menu-buttons">
+      <button id="play-btn" class="primary-btn">🚀 Oyna</button>
+      <button id="challenge-btn" class="challenge-btn">⚡ Zaman Yarışı</button>
+      <button id="howto-btn">📘 Nasıl Oynanır?</button>
+      <button id="settings-btn">⚙️ Ayarlar</button>
+    </div>
+  </div>
+
+  <div id="howto-screen" class="screen">
+    <h2>📘 Nasıl Oynanır?</h2>
+    <div class="howto-content">
+      <h3>🎯 Normal Mod:</h3>
+      <p>
+        • Her seviyede matematiksel denklemler çöz<br>
+        • Boş kutulara doğru sayıları yerleştir<br>
+        • 15 seviyeyi tamamla ve usta ol!<br>
+        • Her doğru cevap puan kazandırır
+      </p>
+      
+      <h3>⚡ Zaman Yarışı Modu:</h3>
+      <p>
+        • 60 saniye içinde mümkün olduğunca çok soru çöz<br>
+        • Her doğru cevap ekstra zaman kazandırır<br>
+        • Yanlış cevap zaman kaybettirir<br>
+        • En yüksek skoru hedefle!
+      </p>
+      
+      <h3>🎁 Bonus Özellikler:</h3>
+      <p>
+        • İpucu sistemi (sınırlı kullanım)<br>
+        • Kombo puanları<br>
+        • Özel güçler<br>
+        • Başarı rozetleri
+      </p>
+    </div>
+    <button class="back-btn">🔙 Geri</button>
+  </div>
+
+  <div id="settings-screen" class="screen">
+    <h2>⚙️ Ayarlar</h2>
+    <div class="settings-panel">
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="sound-toggle" checked> 🔊 Ses Efektleri
+        </label>
+      </div>
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="music-toggle" checked> 🎵 Müzik
+        </label>
+      </div>
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="vibration-toggle" checked> 📳 Titreşim
+        </label>
+      </div>
+      <div class="setting-item">
+        <label>Zorluk Seviyesi:</label>
+        <select id="difficulty-select">
+          <option value="easy">🟢 Kolay</option>
+          <option value="medium" selected>🟡 Orta</option>
+          <option value="hard">🔴 Zor</option>
+        </select>
+      </div>
+      <button id="reset-progress" class="danger-btn">🗑️ İlerlemeyi Sıfırla</button>
+    </div>
+    <button class="back-btn">🔙 Geri</button>
+  </div>
+
+  <div id="game-screen" class="screen">
+    <div class="game-header">
+      <div class="game-info">
+        <div id="level-info">Seviye: <span id="level-number">1</span>/<span id="max-level">15</span></div>
+        <div id="score-display">Puan: <span id="current-score">0</span></div>
+        <div id="combo-display" class="hidden">Kombo: <span id="combo-count">0</span>x</div>
+      </div>
+      <div class="game-tools">
+        <button id="hint-btn" class="tool-btn" title="İpucu (3 kalan)">💡 <span id="hint-count">3</span></button>
+        <button id="skip-btn" class="tool-btn" title="Atla (2 kalan)">⏭️ <span id="skip-count">2</span></button>
+      </div>
+    </div>
+
+    <div id="timer-display" class="hidden">
+      <div class="timer-bar">
+        <div id="timer-fill"></div>
+      </div>
+      <span id="timer-text">60s</span>
+    </div>
+
+    <div id="equation-area">
+      <div id="equation"></div>
+    </div>
+
+    <div id="numbers-pool"></div>
+    
+    <div class="game-controls">
+      <button id="clear-btn" class="secondary-btn">🧹 Temizle</button>
+      <button id="submit-btn" class="primary-btn">🚀 Kontrol Et</button>
+    </div>
+
+    <div id="progress-bar">
+      <div id="progress-fill"></div>
+    </div>
+  </div>
+
+  <div id="challenge-screen" class="screen">
+    <div class="challenge-header">
+      <h2>⚡ Zaman Yarışı</h2>
+      <div class="challenge-stats">
+        <div>Puan: <span id="challenge-score">0</span></div>
+        <div>Çözülen: <span id="problems-solved">0</span></div>
+      </div>
+      <div class="timer-display">
+        <div class="timer-bar">
+          <div id="challenge-timer-fill"></div>
+        </div>
+        <span id="challenge-timer-text">60s</span>
+      </div>
+    </div>
+
+    <div id="challenge-equation-area">
+      <div id="challenge-equation"></div>
+    </div>
+
+    <div id="challenge-numbers-pool"></div>
+    
+    <div class="game-controls">
+      <button id="challenge-clear-btn" class="secondary-btn">🧹 Temizle</button>
+      <button id="challenge-submit-btn" class="primary-btn">✓ Gönder</button>
+    </div>
+  </div>
+
+  <div id="results-screen" class="screen">
+    <h2 id="results-title">🎉 Tebrikler!</h2>
+    <div class="results-content">
+      <div class="result-stat">
+        <span class="result-label">Final Puanı:</span>
+        <span id="final-score" class="result-value">0</span>
+      </div>
+      <div class="result-stat">
+        <span class="result-label">Ulaşılan Seviye:</span>
+        <span id="reached-level" class="result-value">1</span>
+      </div>
+      <div class="result-stat">
+        <span class="result-label">En Yüksek Kombo:</span>
+        <span id="max-combo" class="result-value">0</span>
+      </div>
+      <div id="new-record" class="achievement hidden">🏆 YENİ REKOR!</div>
+      <div id="achievements-earned" class="achievements hidden">
+        <h3>🎖️ Kazanılan Rozetler:</h3>
+        <div id="achievement-list"></div>
+      </div>
+    </div>
+    <div class="results-buttons">
+      <button id="play-again-btn" class="primary-btn">🔄 Tekrar Oyna</button>
+      <button id="menu-return-btn" class="secondary-btn">🏠 Ana Menü</button>
+    </div>
+  </div>
+
+  <div id="notification" class="notification hidden"></div>
+
+  <script src="mathgamescript.js"></script>
+</body>
+</html>

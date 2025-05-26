@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Ping Pong</title>
+    <link rel="stylesheet" href="pinpon.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="ui">
+            <div class="score">
+                <span>Oyuncu 1: <span id="score1">0</span></span>
+            </div>
+            <div class="game-title">RETRO PING PONG</div>
+            <div class="score">
+                <span>Oyuncu 2: <span id="score2">0</span></span>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+        
+        <div class="power-indicators">
+            <div class="power-status" id="powerStatus">Özel Güç: Yok</div>
+        </div>
+        
+        <div class="controls">
+            <div>Oyuncu 1: W/S tuşları | Oyuncu 2: ↑/↓ ok tuşları</div>
+            <div>Özel Güçler: 🚀 Hız | 🔴 Dev Top | 🐌 Yavaşlatma</div>
+        </div>
+    </div>
+    
+    <script src="pinpon.js"></script>
+</body>
+</html>
